@@ -215,7 +215,7 @@
         <section id="recaps" class="recaps">
 
             <!-- Recap card -->
-            <article class="card">
+            <!-- <article class="card">
                 <div class="meta">Week 01 · Jan 2026</div>
                 <h3>Big client updates & growing Nostr culture</h3>
                 <p>Major UI improvements across clients, more creator tools, and thoughtful debates on decentralization
@@ -226,10 +226,10 @@
                     <span class="tag">Culture</span>
                     <span class="tag">Dev</span>
                 </div>
-            </article>
+            </article> -->
 
             <!-- Copy this card for each week -->
-            <article class="card">
+            <!-- <article class="card">
                 <div class="meta">Week 52 · Dec 2025</div>
                 <h3>Year-end reflections & tools that shipped</h3>
                 <p>A calm but meaningful week: reflections, long-form posts, and solid infrastructure progress.</p>
@@ -238,7 +238,7 @@
                     <span class="tag">Reflection</span>
                     <span class="tag">Infra</span>
                 </div>
-            </article>
+            </article> -->
 
         </section>
     </main>
@@ -259,7 +259,7 @@
             "wss://relay.snort.social"
         ];
 
-        const AUTHOR_PUBKEY = "d1d3d2c9d7e8f4b9a1e6f2c7b8d5f0a1c2e3f4d5a6b7c8d9e0f1a2b3c4d5e6f7"; // replace with your hex pubkey
+        const AUTHOR_PUBKEY = "2de0ffa0ac235ff45fa4ccb944cd3f33f79ff5d21fcf95f01f99516bb6bb72cc"; // replace with your hex pubkey
         const recapsContainer = document.getElementById("recaps");
 
         // Only show posts with these hashtags
@@ -275,7 +275,7 @@
                     {
                         kinds: [30023],
                         authors: [AUTHOR_PUBKEY],
-                        limit: 50 // fetch more so filtering works
+                        limit: 100 // fetch more so filtering works
                     }
                 ]));
             };
@@ -302,14 +302,18 @@
             const title = titleTag ? titleTag[1] : "Weekly Recap";
 
             const articleId = note.id;
-            const yakihonneUrl = `https://yakihonne.com/article/${articleId}`;
+            // Find the Yakihonne NADDR link from tags
+            const naddrTag = note.tags.find(t => t[0] === "r"); // 'r' = relay/NADDR
+            const yakihonneUrl = naddrTag
+                ? `https://yakihonne.com/article/${naddrTag[1]}`
+                : "#"; // fallback if not found
+
 
             const card = document.createElement("article");
             card.className = "card";
             card.innerHTML = `
         <div class="meta">Yakihonne · Weekly Recap</div>
         <h3>${title}</h3>
-        <p>${note.content.slice(0, 140)}...</p>
         <a href="${yakihonneUrl}" target="_blank">Read on Yakihonne →</a>
     `;
 
