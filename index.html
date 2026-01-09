@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nostr Weekly Recaps</title>
+    <meta name="description" content="Weekly human-curated recaps from the Nostr ecosystem." />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #0b0f14;
+            --card: #121826;
+            --text: #e6e8eb;
+            --muted: #9aa4b2;
+            --accent: #7c9cff;
+            --accent-soft: rgba(124, 156, 255, 0.15);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            background: radial-gradient(1200px 600px at 20% -10%, #16203a, transparent), var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        header {
+            padding: 4rem 1.5rem 3rem;
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        header h1 {
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: var(--muted);
+            max-width: 640px;
+            margin: 0.5rem auto 2rem;
+        }
+
+        .cta {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        .recaps {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent), var(--card);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.25rem;
+        }
+
+        .meta {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 0.75rem;
+        }
+
+        .tags {
+            margin-top: 1rem;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            margin-right: 0.4rem;
+            color: var(--muted);
+        }
+
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 2rem 1.5rem;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding-top: 3rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Nostr Weekly Recaps</h1>
+        <p>Human-curated weekly highlights from the Nostr ecosystem — apps, dev updates, culture, and signal over noise.
+        </p>
+        <a class="cta" href="#recaps">Read latest recap</a>
+    </header>
+
+    <main>
+        <section id="recaps" class="recaps">
+
+            <!-- Recap card -->
+            <article class="card">
+                <div class="meta">Week 01 · Jan 2026</div>
+                <h3>Big client updates & growing Nostr culture</h3>
+                <p>Major UI improvements across clients, more creator tools, and thoughtful debates on decentralization
+                    this week.</p>
+                <a href="#">Read full recap →</a>
+                <div class="tags">
+                    <span class="tag">Clients</span>
+                    <span class="tag">Culture</span>
+                    <span class="tag">Dev</span>
+                </div>
+            </article>
+
+            <!-- Copy this card for each week -->
+            <article class="card">
+                <div class="meta">Week 52 · Dec 2025</div>
+                <h3>Year-end reflections & tools that shipped</h3>
+                <p>A calm but meaningful week: reflections, long-form posts, and solid infrastructure progress.</p>
+                <a href="#">Read full recap →</a>
+                <div class="tags">
+                    <span class="tag">Reflection</span>
+                    <span class="tag">Infra</span>
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Published weekly on Nostr · Built with ❤️ and open protocols</p>
+        <p>
+            <a href="#">Nostr profile</a> ·
+            <a href="#">RSS</a> ·
+            <a href="#">GitHub</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
