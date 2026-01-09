@@ -131,11 +131,75 @@
                 padding-top: 3rem;
             }
         }
+
+        /* Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 15, 20, 0.75);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+
+        .nav-inner {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+
+        .brand {
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.25rem;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .nav-links a {
+            color: var(--muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+
+        @media (max-width: 600px) {
+            .nav-links {
+                gap: 0.75rem;
+            }
+        }
     </style>
 </head>
 
 <body>
-
+    <nav class="navbar">
+        <div class="nav-inner">
+            <div class="brand">Nostr Recaps</div>
+            <ul class="nav-links">
+                <li><a href="#recaps">Recaps</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#">RSS</a></li>
+                <li><a href="#">Zap ⚡</a></li>
+            </ul>
+        </div>
+    </nav>
     <header>
         <h1>Weekly Nostr Recap</h1>
         <p>Human-curated weekly highlights from the Nostr ecosystem — apps, dev updates, culture, and signal over noise.
@@ -176,9 +240,11 @@
     </main>
 
     <footer>
-        <p>Published weekly on Nostr · Built with ❤️ by <a href="https://njump.me/npub19hs0lg9vyd0lghayeju5fnflx0melawjrl8etuqln9gkhd4mwtxq2t5jcn">Nomishka</a></p>
+        <p>Published weekly on Nostr · Built with ❤️ by <a
+                href="https://njump.me/npub19hs0lg9vyd0lghayeju5fnflx0melawjrl8etuqln9gkhd4mwtxq2t5jcn">Nomishka</a></p>
         <p>
-            <a href="https://njump.me/npub1etjm06353tl0cnqs9wmmzfwyj283z3ee5facwlrte7l957fgqwzqsznr68">Nostr profile</a> ·
+            <a href="https://njump.me/npub1etjm06353tl0cnqs9wmmzfwyj283z3ee5facwlrte7l957fgqwzqsznr68">Nostr profile</a>
+            ·
             <a href="https://github.com/Nomishka/weekly-nostr-recap">GitHub</a> .
         </p>
     </footer>
