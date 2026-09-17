@@ -7,7 +7,6 @@
     <title>Nostr Weekly Recaps</title>
     <meta name="description" content="Weekly human-curated recaps from the Nostr ecosystem." />
 
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
@@ -20,9 +19,7 @@
             --accent-soft: rgba(124, 156, 255, 0.15);
         }
 
-        * {
-            box-sizing: border-box;
-        }
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
@@ -32,10 +29,7 @@
             line-height: 1.6;
         }
 
-        a {
-            color: var(--accent);
-            text-decoration: none;
-        }
+        a { color: var(--accent); text-decoration: none; }
 
         header {
             padding: 4rem 1.5rem 3rem;
@@ -78,6 +72,7 @@
 
         .card {
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent), var(--card);
+            border: 3px solid var(--accent);
             border-radius: 16px;
             padding: 1.5rem;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
@@ -89,20 +84,10 @@
             box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
         }
 
-        .card h3 {
-            margin-top: 0;
-            font-size: 1.25rem;
-        }
+        .card h3 { margin-top: 0; font-size: 1.25rem; }
+        .meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.75rem; }
 
-        .meta {
-            font-size: 0.85rem;
-            color: var(--muted);
-            margin-bottom: 0.75rem;
-        }
-
-        .tags {
-            margin-top: 1rem;
-        }
+        .tags { margin-top: 1rem; }
 
         .tag {
             display: inline-block;
@@ -114,6 +99,8 @@
             color: var(--muted);
         }
 
+        .loading { color: var(--muted); }
+
         footer {
             border-top: 1px solid rgba(255, 255, 255, 0.08);
             padding: 2rem 1.5rem;
@@ -122,17 +109,8 @@
             font-size: 0.9rem;
         }
 
-        footer a {
-            color: var(--accent);
-        }
+        footer a { color: var(--accent); }
 
-        @media (max-width: 600px) {
-            header {
-                padding-top: 3rem;
-            }
-        }
-
-        /* Navbar */
         .navbar {
             position: sticky;
             top: 0;
@@ -143,8 +121,6 @@
             height: 120px;
         }
 
-
-
         .nav-inner {
             max-width: 1100px;
             margin: auto;
@@ -152,16 +128,10 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: inherit
+            height: inherit;
         }
 
-
-        .navbar-logo {
-            height: 90px;
-            width: auto;
-
-        }
-
+        .navbar-logo { height: 90px; width: auto; }
 
         .nav-links {
             list-style: none;
@@ -171,23 +141,12 @@
             padding: 0;
         }
 
-
-        .nav-links a {
-            color: var(--muted);
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-
-        .nav-links a:hover {
-            color: var(--text);
-        }
-
+        .nav-links a { color: var(--muted); font-weight: 500; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--text); }
 
         @media (max-width: 600px) {
-            .nav-links {
-                gap: 0.75rem;
-            }
+            header { padding-top: 3rem; }
+            .nav-links { gap: 0.75rem; }
         }
     </style>
 </head>
@@ -195,7 +154,7 @@
 <body>
     <nav class="navbar">
         <div class="nav-inner">
-            <img class="navbar-logo" width="50" height="auto" src="./images/nostr_recap_logo.png"></img>
+            <img class="navbar-logo" width="50" height="auto" src="./images/nostr_recap_logo.png" alt="Nostr Recap logo">
             <ul class="nav-links">
                 <li><a href="#recaps">Recaps</a></li>
                 <li><a href="#about">About</a></li>
@@ -204,54 +163,26 @@
             </ul>
         </div>
     </nav>
+
     <header>
         <h1>Weekly Nostr Recap</h1>
-        <p>Human-curated weekly highlights from the Nostr ecosystem — apps, dev updates, culture, and signal over noise.
-        </p>
+        <p>Human-curated weekly highlights from the Nostr ecosystem — apps, dev updates, culture, and signal over noise.</p>
         <a class="cta" href="#recaps">Read latest recap</a>
     </header>
 
     <main>
-        <section id="recaps" class="recaps">
-
-            <!-- Recap card -->
-            <!-- <article class="card">
-                <div class="meta">Week 01 · Jan 2026</div>
-                <h3>Big client updates & growing Nostr culture</h3>
-                <p>Major UI improvements across clients, more creator tools, and thoughtful debates on decentralization
-                    this week.</p>
-                <a href="#">Read full recap →</a>
-                <div class="tags">
-                    <span class="tag">Clients</span>
-                    <span class="tag">Culture</span>
-                    <span class="tag">Dev</span>
-                </div>
-            </article> -->
-
-            <!-- Copy this card for each week -->
-            <!-- <article class="card">
-                <div class="meta">Week 52 · Dec 2025</div>
-                <h3>Year-end reflections & tools that shipped</h3>
-                <p>A calm but meaningful week: reflections, long-form posts, and solid infrastructure progress.</p>
-                <a href="#">Read full recap →</a>
-                <div class="tags">
-                    <span class="tag">Reflection</span>
-                    <span class="tag">Infra</span>
-                </div>
-            </article> -->
-
-        </section>
+        <section id="recaps" class="recaps"></section>
     </main>
 
     <footer>
-        <p>Published weekly on Nostr · Built with ❤️ by <a
-                href="https://njump.me/npub19hs0lg9vyd0lghayeju5fnflx0melawjrl8etuqln9gkhd4mwtxq2t5jcn">Nomishka</a></p>
+        <p>Published weekly on Nostr · Built with ❤️ by <a href="https://njump.me/npub19hs0lg9vyd0lghayeju5fnflx0melawjrl8etuqln9gkhd4mwtxq2t5jcn">Nomishka</a></p>
         <p>
             <a href="https://njump.me/npub1etjm06353tl0cnqs9wmmzfwyj283z3ee5facwlrte7l957fgqwzqsznr68">Nostr profile</a>
             ·
-            <a href="https://github.com/Nomishka/weekly-nostr-recap">GitHub</a> .
+            <a href="https://github.com/Nomishka/weekly-nostr-recap">GitHub</a>
         </p>
     </footer>
+
     <script>
         const RELAYS = [
             "wss://relay.damus.io",
@@ -259,11 +190,29 @@
             "wss://relay.snort.social"
         ];
 
-        const AUTHOR_PUBKEY = "2de0ffa0ac235ff45fa4ccb944cd3f33f79ff5d21fcf95f01f99516bb6bb72cc"; // replace with your hex pubkey
-        const recapsContainer = document.getElementById("recaps");
-
-        // Only show posts with these hashtags
+        const AUTHOR_PUBKEY = "2de0ffa0ac235ff45fa4ccb944cd3f33f79ff5d21fcf95f01f99516bb6bb72cc";
         const FILTER_TAGS = ["NostrRecap", "GrowNostr"];
+        const TOTAL_RECAPS = 93;
+        const recapsContainer = document.getElementById("recaps");
+        const recapCards = new Map();
+
+        // Create one card for every Nostr Recap edition.
+        // The cards are created immediately, then populated with the matching
+        // Nostr event when it is received from a relay.
+        for (let edition = TOTAL_RECAPS; edition >= 1; edition--) {
+            const card = document.createElement("article");
+            card.className = "card";
+            card.dataset.edition = edition;
+            card.innerHTML = `
+                <div class="meta">Nostr Recap · Edition ${edition}</div>
+                <h3>Nostr Recap #${edition}</h3>
+                <p class="loading">Loading recap…</p>
+            `;
+            recapsContainer.appendChild(card);
+            recapCards.set(edition, card);
+        }
+
+        const seenEvents = new Set();
 
         RELAYS.forEach(relayUrl => {
             const ws = new WebSocket(relayUrl);
@@ -271,11 +220,11 @@
             ws.onopen = () => {
                 ws.send(JSON.stringify([
                     "REQ",
-                    "yakihonne-recaps",
+                    `nostr-recaps-${Date.now()}`,
                     {
                         kinds: [30023],
                         authors: [AUTHOR_PUBKEY],
-                        limit: 100 // fetch more so filtering works
+                        limit: 100
                     }
                 ]));
             };
@@ -283,47 +232,57 @@
             ws.onmessage = (event) => {
                 const data = JSON.parse(event.data);
 
-                if (data[0] === "EVENT") {
-                    const note = data[2];
+                if (data[0] !== "EVENT") return;
 
-                    // ✅ Filter by hashtags
-                    const noteTags = note.tags
-                        .filter(t => t[0] === "t") // only 't' tags
-                        .map(t => t[1]);
+                const note = data[2];
+                if (seenEvents.has(note.id)) return;
+                seenEvents.add(note.id);
 
-                    const hasTag = FILTER_TAGS.some(tag => noteTags.includes(tag));
-                    if (hasTag) renderRecap(note);
-                }
+                const noteTags = note.tags
+                    .filter(tag => tag[0] === "t")
+                    .map(tag => tag[1]);
+
+                const hasTag = FILTER_TAGS.some(tag =>
+                    noteTags.some(noteTag => noteTag.toLowerCase() === tag.toLowerCase())
+                );
+
+                if (hasTag) renderRecap(note);
             };
         });
 
-        function renderRecap(note) {
-            const titleTag = note.tags.find(t => t[0] === "title");
-            const title = titleTag ? titleTag[1] : "Weekly Recap";
+        function getEdition(title) {
+            const match = title.match(/(?:-|\()\s*(\d+)(?:st|nd|rd|th)\s+edition/i);
+            return match ? Number(match[1]) : null;
+        }
 
-            const articleId = note.id;
-            // Find the Yakihonne NADDR link from tags
-            const naddrTag = note.tags.find(t => t[0] === "r"); // 'r' = relay/NADDR
+        function renderRecap(note) {
+            const titleTag = note.tags.find(tag => tag[0] === "title");
+            const title = titleTag ? titleTag[1] : "Weekly Nostr Recap";
+            const edition = getEdition(title);
+
+            if (!edition || edition < 1 || edition > TOTAL_RECAPS) return;
+
+            const card = recapCards.get(edition);
+            if (!card) return;
+
+            const naddrTag = note.tags.find(tag => tag[0] === "r" && tag[1]?.startsWith("naddr"));
             const yakihonneUrl = naddrTag
                 ? `https://yakihonne.com/article/${naddrTag[1]}`
-                : "#"; // fallback if not found
+                : `https://yakihonne.com/search?q=${encodeURIComponent(title)}`;
 
-
-            const card = document.createElement("article");
-            card.className = "card";
             card.innerHTML = `
-        <div class="meta">Yakihonne · Weekly Recap</div>
-        <h3>${title}</h3>
-        <a href="${yakihonneUrl}" target="_blank">Read on Yakihonne →</a>
-    `;
+                <div class="meta">Nostr Recap · Edition ${edition}</div>
+                <h3>${escapeHtml(title)}</h3>
+                <a href="${yakihonneUrl}" target="_blank" rel="noopener noreferrer">Read on Yakihonne →</a>
+            `;
+        }
 
-            // Prepend latest first
-            recapsContainer.prepend(card);
+        function escapeHtml(value) {
+            const div = document.createElement("div");
+            div.textContent = value;
+            return div.innerHTML;
         }
     </script>
-
-
-
 </body>
 
 </html>
